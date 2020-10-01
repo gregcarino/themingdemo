@@ -1,0 +1,19 @@
+{
+	"welcomeFile": "/index.html",
+	"authenticationMethod": "route",
+	"logout": {
+		"logoutEndpoint": "/do/logout"
+	},
+	"routes": [{
+		"source": "^/MyPlanAPI/odata/v4/(.*)$",
+		"target": "/odata/v4/$1",
+		"authenticationType": "xsuaa",
+		"destination": "MyPlanAPI",
+		"csrfProtection": false
+	}, {
+		"source": "^(.*)$",
+		"target": "$1",
+		"service": "html5-apps-repo-rt",
+		"authenticationType": "xsuaa"
+	}]
+}

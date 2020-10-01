@@ -1,5 +1,14 @@
 {
-	"authenticationMethod": "none",
-	"routes": [],
+	"authenticationMethod": "route",
+	"sessionTimeout" : 2,
+	"logout": {
+		"logoutEndpoint": "/customLogoutSF",
+		"logoutPage": "/customLogout.html"
+	},
+	"routes": [{
+		"source": "^/customLogout.html$",
+		"localDir": "static-resources",
+		"authenticationType": "none"
+	}],
 	"welcomeFile": "/cp.portal"
 }

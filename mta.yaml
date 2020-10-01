@@ -12,9 +12,11 @@ modules:
       memory: 256M
     requires:
       - name: mta_themingdemo_html5_repo_runtime
-      - name: uaa_mta_themingdemo
       - name: mta_themingdemo-theming
       - name: portal_resources_mta_themingdemo
+      - name: uaa_mta_themingdemo
+    properties: 
+      SF_COMPANY: C0001087662P
   - name: mta_themingdemo_ui_deployer
     type: com.sap.html5.application-content
     path: mta_themingdemo_ui_deployer
@@ -26,6 +28,10 @@ modules:
           artifacts:
             - './*'
           target-path: resources/themingdemo
+        - name: flpplugin
+          artifacts:
+            - './*'
+          target-path: resources/flpplugin
   - name: themingdemo
     type: html5
     path: themingdemo
@@ -37,7 +43,7 @@ modules:
       supported-platforms: []
       build-result: dist
   - name: site
-    type: com.sap.application.portal.content
+    type: com.sap.portal.content
     path: site
     requires:
       - name: portal_resources_mta_themingdemo
@@ -51,6 +57,16 @@ modules:
       - name: mta_themingdemo_html5_repo_host
       - name: mta_themingdemo_ui_deployer
       - name: mta_themingdemo-theming
+  - name: flpplugin
+    type: html5
+    path: flpplugin
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
 resources:
   - name: mta_themingdemo_html5_repo_runtime
     parameters:

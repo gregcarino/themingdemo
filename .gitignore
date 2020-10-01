@@ -15,3 +15,9 @@ AppVariantPreviewPayload.zip
 mergedManifestDescriptor.json
 APIExternalProducer.js
 .*/APIExternalProducer.js
+node_modules/
+dist/
+mta_themingdemo_ui_deployer/resources/
+package-lock.json
+launch.json
+.env*

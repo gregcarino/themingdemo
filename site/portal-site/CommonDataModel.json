@@ -14,7 +14,12 @@
 				"i18n": "i18n/defaultCatalogId.properties"
 			},
 			"payload": {
-				"viz": []
+				 "viz": [
+                        {
+                            "appId": "test.themingdemo.flpplugin",
+                            "vizId": "Shell-plugin"
+                        }
+                    ]
 			}
 		}],
 		"groups": [{
@@ -26,7 +31,11 @@
 				"i18n": "i18n/defaultGroupId.properties"
 			},
 			"payload": {
-				"viz": []
+				"viz": [{
+                            "id": "test.themingdemo",
+                            "appId": "test.themingdemo",
+                            "vizId": "ThemingDemo-show"
+                        }]
 			}
 		}],
 		"sites": [{
@@ -46,6 +55,17 @@
 									"config": {
 										"applications": {
 											"Shell-home": {}
+										}
+									}
+								}
+							}
+						},
+						"services": {
+							"Container": {
+								"adapter": {
+									"config": {
+										"systemProperties": {
+											"logoutUrl": "/customLogoutSF"
 										}
 									}
 								}
